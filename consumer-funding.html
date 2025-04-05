@@ -17,7 +17,7 @@
     }
     nav {
       background-color: var(--main-green);
-      padding:1rem 2rem;
+      padding: 1rem 2rem;
       display:flex;
       gap:2rem;
       align-items:center;
@@ -59,13 +59,11 @@
       padding:1rem;
       border-radius:6px;
       box-shadow:0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom:1rem;
     }
     .funding-item h2 {
       margin-top:0;
       color:var(--accent-brown);
-    }
-    .funding-item p {
-      margin:0.5rem 0;
     }
     .progress {
       height:10px;
@@ -77,7 +75,26 @@
     .progress-bar {
       height:10px;
       background-color: var(--main-green);
-      width:50%;
+      width:65%;
+    }
+    .funding-form {
+      margin-top:1rem;
+      background:#fff;
+      border:1px solid #ddd;
+      padding:1rem;
+      border-radius:6px;
+    }
+    .funding-form input {
+      width:100px; 
+      margin-right:0.5rem;
+    }
+    .funding-form button {
+      background-color: var(--main-green);
+      color:#fff;
+      border:none;
+      border-radius:4px;
+      padding:0.4rem 1rem;
+      cursor:pointer;
     }
   </style>
 </head>
@@ -99,26 +116,95 @@
 
   <div class="container">
     <h1>펀딩 프로젝트</h1>
+
     <div class="funding-list">
-      <div class="funding-item">
+      <!--펀딩예시1 -->
+      <div class="funding-item" id="fund1">
         <h2>강화도 갓김치 펀딩</h2>
         <div class="progress">
-          <div class="progress-bar" style="width:65%;"></div>
+          <div class="progress-bar" id="progressBar1" style="width:65%;"></div>
         </div>
-        <p>목표금액: 1,000,000원</p>
-        <p>달성률: 65%</p>
-        <p>남은 기간: 7일</p>
+        <p>목표금액: <span id="goal1">1,000,000</span>원</p>
+        <p>달성률: <span id="rate1">65</span>%</p>
+        <p>현재 모금액: <span id="current1">650,000</span>원</p>
+
+        <!-- 펀딩ㅁ여폼 -->
+        <div class="funding-form">
+          <input type="number" id="fundingInput1" placeholder="금액(원)" />
+          <button onclick="participateFund1()">펀딩 참여</button>
+        </div>
       </div>
-      <div class="funding-item">
+
+      <!-- 펀딩예시2 -->
+      <div class="funding-item" id="fund2">
         <h2>유기농 토마토 펀딩</h2>
         <div class="progress">
-          <div class="progress-bar" style="width:30%;"></div>
+          <div class="progress-bar" id="progressBar2" style="width:30%;"></div>
         </div>
-        <p>목표금액: 500,000원</p>
-        <p>달성률: 30%</p>
-        <p>남은 기간: 14일</p>
+        <p>목표금액: <span id="goal2">500,000</span>원</p>
+        <p>달성률: <span id="rate2">30</span>%</p>
+        <p>현재 모금액: <span id="current2">150,000</span>원</p>
+
+       <!--펀딩참여폼2-->
+        <div class="funding-form">
+          <input type="number" id="fundingInput2" placeholder="금액(원)" />
+          <button onclick="participateFund2()">펀딩 참여</button>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function participateFund1(){
+      const input = document.getElementById('fundingInput1');
+      const amount = Number(input.value);
+      if(!amount || amount <= 0){
+        alert('올바른 금액을 입력하세요.');
+        return;
+      }
+      const goal = 1000000; // 목표금액
+      // 현재값
+      const currentEl = document.getElementById('current1');
+      let currentVal = Number(currentEl.textContent.replace(/[^0-9]/g,''));
+      currentVal += amount;
+      currentEl.textContent = currentVal.toLocaleString();
+
+      // 달성률
+      const rateEl = document.getElementById('rate1');
+      const newRate = Math.floor((currentVal / goal)*100);
+      rateEl.textContent = newRate;
+
+      
+      const barEl = document.getElementById('progressBar1');
+      barEl.style.width = newRate + '%';
+
+      alert(`감사합니다! ${amount.toLocaleString()}원 펀딩 참여 완료 (MVP)`);
+      input.value = '';
+    }
+
+    function participateFund2(){
+      const input = document.getElementById('fundingInput2');
+      const amount = Number(input.value);
+      if(!amount || amount <= 0){
+        alert('올바른 금액을 입력하세요.');
+        return;
+      }
+      const goal = 500000;
+      const currentEl = document.getElementById('current2');
+      let currentVal = Number(currentEl.textContent.replace(/[^0-9]/g,''));
+      currentVal += amount;
+      currentEl.textContent = currentVal.toLocaleString();
+
+      const rateEl = document.getElementById('rate2');
+      const newRate = Math.floor((currentVal / goal)*100);
+      rateEl.textContent = newRate;
+
+      const barEl = document.getElementById('progressBar2');
+      barEl.style.width = newRate + '%';
+
+      alert(`감사합니다! ${amount.toLocaleString()}원 펀딩 참여 완료 (MVP)`);
+      input.value = '';
+    }
+  </script>
 </body>
 </html>
