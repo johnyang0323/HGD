@@ -73,6 +73,23 @@
       border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
+      margin-top: 1rem;
+    }
+    .club-section {
+      background-color: #fdfaf5;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+    .club-section h2 {
+      margin-top: 0;
+      color: var(--accent-brown);
+    }
+    .club-section label {
+      margin-bottom: 0.4rem;
+      font-weight: normal;
+      display: block;
     }
   </style>
 </head>
@@ -90,36 +107,48 @@
 
   <section class="section">
     <h1>입점 신청</h1>
-    <form>
+    <form onsubmit="submitForm(event)">
       <div class="form-field">
         <label>농가 이름</label>
-        <input type="text">
+        <input type="text" id="farmName" required>
       </div>
       <div class="form-field">
         <label>대표자 성함</label>
-        <input type="text">
+        <input type="text" id="ownerName" required>
       </div>
       <div class="form-field">
         <label>연락처</label>
-        <input type="text">
+        <input type="text" id="phone" required>
       </div>
       <div class="form-field">
         <label>판매 품목</label>
-        <input type="text">
+        <input type="text" id="items">
       </div>
       <div class="form-field">
         <label>입점 유형</label>
-        <select>
+        <select id="entryType">
           <option>기본 입점</option>
           <option>프리미엄 입점</option>
         </select>
       </div>
-      <div class="form-field">
-        <label>간단한 소개</label>
-        <textarea rows="4"></textarea>
+      <!-- 클럽 가입 섹션 -->
+      <div class="club-section">
+        <h2>뜰마루 클럽 가입</h2>
+        <p>추가 광고/브랜딩 혜택 등을 누릴 수 있습니다.</p>
+        <label><input type="radio" name="clubPlan" value="상품A"> 상품A (광고/주문/배달 등)</label>
+        <label><input type="radio" name="clubPlan" value="상품B"> 상품B (농가 브랜딩 집중형)</label>
+        <label><input type="radio" name="clubPlan" value="가입안함" checked> 클럽 가입 안 함</label>
       </div>
+
       <button type="submit">신청하기</button>
     </form>
   </section>
+
+  <script>
+    function submitForm(e){
+      e.preventDefault();
+      alert("입점 신청이 완료되었습니다 (MVP). 실제 서버 전송X");
+    }
+  </script>
 </body>
 </html>
