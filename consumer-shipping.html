@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배송조회 - 한그담 소비자</title>
+  <style>
+    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
+    nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    nav .logo { font-size: 1.5rem; font-weight: bold; color: white; }
+    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
+    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
+    .container { max-width: 800px; margin: 2rem auto; padding: 1rem; }
+    h1 { color: #EC692C; }
+    .address-box, .track-box {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .track-box ul { list-style: none; padding: 0; margin: 0; }
+    .track-box li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .track-box li:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">한그담</div>
+    <ul>
+      <li><a href="consumer-main.html">홈</a></li>
+      <li><a href="consumer-orders.html">주문내역</a></li>
+      <li><a href="consumer-shipping.html">배송조회</a></li>
+      <li><a href="consumer-settings.html">설정</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>배송조회</h1>
+
+    <div class="address-box">
+      <h3>기본 배송지</h3>
+      <p>서울특별시 마포구 월드컵북로 42길 17, 302호</p>
+      <p>연락처: 010-1234-5678</p>
+    </div>
+
+    <div class="track-box">
+      <h3>배송 현황 - 주문번호 #20250401001</h3>
+      <ul>
+        <li>📦 상품 준비 중 - 04/01 10:32</li>
+        <li>🚚 배송 시작 - 04/01 15:08</li>
+        <li>📍 서울 물류센터 도착 - 04/01 21:00</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
