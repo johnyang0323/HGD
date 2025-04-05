@@ -1,91 +1,102 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>판매현황 - 한그담 판매자</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>뜰마루 | 문서 관리</title>
   <style>
-    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
-    nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { font-size: 1.5rem; font-weight: bold; color: white; }
-    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
-    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
-    .container { max-width: 1000px; margin: 2rem auto; padding: 1rem; }
-    h1 { color: #EC692C; }
-    .status-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .card {
-      flex: 1 1 250px;
-      background: #f9f9f9;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    :root {
+      --main-green: #4E944F;
+      --accent-brown: #795548;
+      --bg-light: #F2F8F2;
+      --text-color: #333;
     }
-    .card h3 { color: #EC692C; margin: 0; }
-    .card p { font-size: 0.9rem; color: #555; }
-    .chart-container { background: #f9f9f9; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    body {
+      margin:0;
+      font-family:'Pretendard',sans-serif;
+    }
+    nav {
+      background-color: var(--accent-brown);
+      padding:1rem 2rem;
+      display:flex;
+      gap:2rem;
+      align-items:center;
+      color:white;
+    }
+    nav .logo {
+      font-size:1.3rem;
+      font-weight:bold;
+    }
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:1rem;
+      margin:0;
+      padding:0;
+    }
+    nav ul li a {
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .container {
+      max-width:800px;
+      margin:2rem auto;
+      padding:1rem;
+    }
+    h1 {
+      color: var(--accent-brown);
+      margin-bottom:1rem;
+    }
+    .upload-section {
+      background-color: var(--bg-light);
+      padding:1rem;
+      border-radius:6px;
+      margin-bottom:1rem;
+    }
+    .document-list {
+      border-top:2px solid #ccc;
+      padding-top:1rem;
+    }
+    .document-item {
+      margin-bottom:0.5rem;
+    }
+    button {
+      background-color: var(--main-green);
+      color:#fff;
+      border:none;
+      border-radius:4px;
+      padding:0.4rem 0.8rem;
+      cursor:pointer;
+    }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">한그담</div>
+    <div class="logo">뜰마루 - 판매자 모드</div>
     <ul>
       <li><a href="seller-main.html">내 농장</a></li>
-      <li><a href="seller-orders.html">주문관리</a></li>
-      <li><a href="seller-shipping.html">배송관리</a></li>
-      <li><a href="seller-status.html">판매현황</a></li>
-      <li><a href="seller-customers.html">고객관리</a></li>
-      <li><a href="seller-setting.html">설정</a></li>
-      <li><a href="seller-documents.html">문서관리</a></li>
+      <li><a href="seller-orders.html">주문 관리</a></li>
+      <li><a href="seller-shipping.html">배송 관리</a></li>
+      <li><a href="seller-status.html">판매 현황</a></li>
+      <li><a href="seller-customers.html">고객 관리</a></li>
+      <li><a href="seller-settings.html">설정</a></li>
+      <li><a href="seller-documents.html">문서 관리</a></li>
     </ul>
   </nav>
-  <div class="container">
-    <h1>판매 현황</h1>
-    <div class="status-grid">
-      <div class="card">
-        <h3>총 판매 수</h3>
-        <p>1,428건</p>
-      </div>
-      <div class="card">
-        <h3>이번 달 매출</h3>
-        <p>₩4,380,000</p>
-      </div>
-      <div class="card">
-        <h3>평균 리뷰 점수</h3>
-        <p>4.7 / 5</p>
-      </div>
-      <div class="card">
-        <h3>반품율</h3>
-        <p>2.1%</p>
-      </div>
-    </div>
 
-    <div class="chart-container">
-      <h3 style="color:#EC692C">월별 매출 그래프</h3>
-      <canvas id="salesChart"></canvas>
+  <div class="container">
+    <h1>문서 관리</h1>
+    <div class="upload-section">
+      <h2>문서 업로드</h2>
+      <input type="file"/>
+      <button>업로드</button>
+    </div>
+    <div class="document-list">
+      <h2>등록된 문서</h2>
+      <div class="document-item">계약서_2025.pdf</div>
+      <div class="document-item">친환경 인증서.jpg</div>
     </div>
   </div>
-  <script>
-    const ctx = document.getElementById('salesChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['1월', '2월', '3월', '4월', '5월', '6월'],
-        datasets: [{
-          label: '월별 매출 (만원)',
-          data: [320, 410, 390, 438, 470, 495],
-          borderColor: '#EC692C',
-          backgroundColor: 'rgba(236, 105, 44, 0.2)',
-          tension: 0.3,
-          fill: true,
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { position: 'top' } },
-        scales: { y: { beginAtZero: true } }
-      }
-    });
-  </script>
 </body>
 </html>
