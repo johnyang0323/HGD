@@ -42,61 +42,45 @@
       font-weight: 500;
     }
     .hero {
-      padding: 4rem 2rem;
+      padding: 6rem 2rem;
       text-align: center;
-      background-color: #FFF4EE;
+      background: linear-gradient(to bottom right, #EC692C, #ff9f60);
+      color: white;
     }
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
     .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-    .hero .cta {
-      padding: 0.8rem 1.6rem;
-      background-color: #EC692C;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .mode-switch {
-      text-align: center;
-      margin: 2rem;
-    }
-    .mode-switch button {
-      background-color: #EC692C;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.4rem;
-      border-radius: 8px;
-      margin: 0 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
+      font-size: 1.25rem;
+      max-width: 600px;
       margin: 0 auto;
     }
-    .section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-    .card-list {
+    .features {
+      padding: 4rem 2rem;
       display: flex;
-      gap: 1.5rem;
+      justify-content: center;
       flex-wrap: wrap;
+      gap: 2rem;
+      background: #fef9f6;
     }
-    .card {
-      flex: 1 1 200px;
-      background: #f9f9f9;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    .feature-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .feature-card h3 {
+      color: #EC692C;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #EC692C;
+      margin-top: 4rem;
     }
     .footer {
       text-align: center;
@@ -123,30 +107,23 @@
   </nav>
 
   <section class="hero">
-    <h1>청년 농부의 꿈을 담다, 한그담</h1>
-    <p>건강하고 신뢰할 수 있는 농산물, 이제는 한 곳에서.</p>
-    <a href="market.html"><button class="cta">농산물 보러가기</button></a>
+    <h1>한 그릇에 담긴 이야기, 한그담</h1>
+    <p>건강한 농산물과 따뜻한 이야기를 담은 플랫폼, 청년 농부의 도전과 정성을 함께 느껴보세요.</p>
   </section>
 
-  <section class="mode-switch">
-    <button onclick="window.location.href='consumer-main.html'">소비자 모드</button>
-    <button onclick="window.location.href='seller-main.html'">판매자 모드</button>
-  </section>
-
-  <section class="section">
-    <h2>오늘의 추천 농산물</h2>
-    <div class="card-list">
-      <div class="card">🍓 유기농 딸기</div>
-      <div class="card">🥬 강화도 상추</div>
-      <div class="card">🍎 청년 농부의 사과</div>
+  <h2 class="section-title">우리의 특징</h2>
+  <section class="features">
+    <div class="feature-card">
+      <h3>건강 맞춤 AI 추천</h3>
+      <p>당뇨, 고혈압, 유당불내증 등 개인 건강에 맞춘 농산물 추천</p>
     </div>
-  </section>
-
-  <section class="section">
-    <h2>브랜드 스토리</h2>
-    <div class="card-list">
-      <div class="card">문성선 농부의 이야기</div>
-      <div class="card">조농부 마켓의 도전</div>
+    <div class="feature-card">
+      <h3>직거래 스토리 마켓</h3>
+      <p>청년 농부의 이야기와 함께 하는 신선한 직거래 마켓</p>
+    </div>
+    <div class="feature-card">
+      <h3>펀딩 & 커뮤니티</h3>
+      <p>함께 성장하는 농촌 펀딩 프로젝트와 고객 소통 공간</p>
     </div>
   </section>
 
@@ -155,3 +132,4 @@
   </footer>
 </body>
 </html>
+
