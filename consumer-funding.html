@@ -1,57 +1,97 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>펀딩 - 한그담 소비자</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>뜰마루 | 펀딩</title>
   <style>
-    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
-    nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { font-size: 1.5rem; font-weight: bold; color: white; }
-    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
-    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
-    .container { max-width: 1000px; margin: 2rem auto; padding: 1rem; }
-    h1 { color: #EC692C; }
-    .funding-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 1rem;
+    :root {
+      --main-green: #4E944F;
+      --accent-brown: #795548;
+      --bg-light: #F2F8F2;
+      --text-color: #333;
     }
-    .fund-card {
-      flex: 1 1 300px;
-      background: #f9f9f9;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    body {
+      margin:0;
+      font-family:'Pretendard',sans-serif;
     }
-    .fund-card h3 {
-      margin-top: 0;
-      color: #EC692C;
+    nav {
+      background-color: var(--main-green);
+      padding:1rem 2rem;
+      display:flex;
+      gap:2rem;
+      align-items:center;
+      color:white;
     }
-    .progress-bar {
-      height: 10px;
-      background: #ddd;
-      border-radius: 5px;
-      margin-top: 0.5rem;
-      overflow: hidden;
+    nav .logo {
+      font-size:1.3rem;
+      font-weight:bold;
+    }
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:1rem;
+      margin:0;
+      padding:0;
+    }
+    nav ul li a {
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .container {
+      max-width:800px;
+      margin:2rem auto;
+      padding:1rem;
+    }
+    h1 {
+      color:var(--main-green);
+      margin-bottom:1rem;
+    }
+    .funding-list {
+      display:flex;
+      flex-wrap:wrap;
+      gap:1rem;
+    }
+    .funding-item {
+      flex:1 1 250px;
+      background-color:var(--bg-light);
+      padding:1rem;
+      border-radius:6px;
+      box-shadow:0 2px 5px rgba(0,0,0,0.05);
+    }
+    .funding-item h2 {
+      margin-top:0;
+      color:var(--accent-brown);
+    }
+    .funding-item p {
+      margin:0.5rem 0;
     }
     .progress {
-      height: 100%;
-      background: #EC692C;
-      width: 72%;
+      height:10px;
+      background:#ddd;
+      border-radius:5px;
+      overflow:hidden;
+      margin-bottom:0.5rem;
     }
-    .fund-info {
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
+    .progress-bar {
+      height:10px;
+      background-color: var(--main-green);
+      width:50%;
     }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">한그담</div>
+    <div class="logo">뜰마루 - 소비자 모드</div>
     <ul>
       <li><a href="consumer-main.html">홈</a></li>
+      <li><a href="consumer-orders.html">주문내역</a></li>
+      <li><a href="consumer-shipping.html">배송조회</a></li>
+      <li><a href="consumer-payment.html">결제방법</a></li>
+      <li><a href="consumer-inquiry.html">문의사항</a></li>
+      <li><a href="consumer-settings.html">설정</a></li>
+      <li><a href="consumer-support.html">고객센터</a></li>
       <li><a href="consumer-community.html">커뮤니티</a></li>
       <li><a href="consumer-funding.html">펀딩</a></li>
     </ul>
@@ -59,16 +99,24 @@
 
   <div class="container">
     <h1>펀딩 프로젝트</h1>
-    <div class="funding-grid">
-      <div class="fund-card">
-        <h3>강화도 딸기하우스 증설</h3>
-        <div class="progress-bar"><div class="progress"></div></div>
-        <div class="fund-info">72% 달성 · 목표 5,000,000원</div>
+    <div class="funding-list">
+      <div class="funding-item">
+        <h2>강화도 갓김치 펀딩</h2>
+        <div class="progress">
+          <div class="progress-bar" style="width:65%;"></div>
+        </div>
+        <p>목표금액: 1,000,000원</p>
+        <p>달성률: 65%</p>
+        <p>남은 기간: 7일</p>
       </div>
-      <div class="fund-card">
-        <h3>무항생제 유정란 생산 확대</h3>
-        <div class="progress-bar"><div class="progress" style="width: 45%;"></div></div>
-        <div class="fund-info">45% 달성 · 목표 3,000,000원</div>
+      <div class="funding-item">
+        <h2>유기농 토마토 펀딩</h2>
+        <div class="progress">
+          <div class="progress-bar" style="width:30%;"></div>
+        </div>
+        <p>목표금액: 500,000원</p>
+        <p>달성률: 30%</p>
+        <p>남은 기간: 14일</p>
       </div>
     </div>
   </div>
