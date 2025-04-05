@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>판매자 주문관리 - 한그담</title>
+  <style>
+    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
+    nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    nav .logo { font-size: 1.5rem; font-weight: bold; color: white; }
+    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
+    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
+    .container { max-width: 1000px; margin: 2rem auto; padding: 1rem; }
+    h1 { color: #EC692C; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { padding: 0.75rem; border-bottom: 1px solid #ddd; text-align: left; }
+    th { background: #FFF4EE; color: #EC692C; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">한그담</div>
+    <ul>
+      <li><a href="seller-main.html">내 농장</a></li>
+      <li><a href="seller-orders.html">주문관리</a></li>
+      <li><a href="seller-shipping.html">배송관리</a></li>
+      <li><a href="seller-status.html">판매현황</a></li>
+      <li><a href="seller-customers.html">고객관리</a></li>
+      <li><a href="seller-settings.html">설정</a></li>
+      <li><a href="seller-documents.html">문서관리</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>주문 관리</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>주문번호</th>
+          <th>고객명</th>
+          <th>상품</th>
+          <th>수량</th>
+          <th>상태</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#20250401001</td>
+          <td>이소비자</td>
+          <td>강화도 감자</td>
+          <td>2</td>
+          <td>배송중</td>
+        </tr>
+        <tr>
+          <td>#20250328002</td>
+          <td>최유저</td>
+          <td>무농약 쌈채소</td>
+          <td>1</td>
+          <td>배송완료</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
