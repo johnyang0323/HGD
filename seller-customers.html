@@ -1,56 +1,111 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>고객관리 - 한그담 판매자</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>뜰마루 | 고객 관리</title>
   <style>
-    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
-    nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { font-size: 1.5rem; font-weight: bold; color: white; }
-    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
-    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
-    .container { max-width: 900px; margin: 2rem auto; padding: 1rem; }
-    h1 { color: #EC692C; }
-    .customer-list { margin-top: 1rem; }
-    .customer {
-      padding: 1rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    :root {
+      --main-green: #4E944F;
+      --accent-brown: #795548;
+      --bg-light: #F2F8F2;
+      --text-color: #333;
     }
-    .customer h3 { margin: 0; color: #EC692C; }
-    .customer p { margin: 0.3rem 0; }
+    body {
+      margin:0;
+      font-family:'Pretendard',sans-serif;
+    }
+    nav {
+      background-color: var(--accent-brown);
+      padding:1rem 2rem;
+      display:flex;
+      gap:2rem;
+      align-items:center;
+      color:white;
+    }
+    nav .logo {
+      font-size:1.3rem;
+      font-weight:bold;
+    }
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:1rem;
+      margin:0;
+      padding:0;
+    }
+    nav ul li a {
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .container {
+      max-width:900px;
+      margin:2rem auto;
+      padding:1rem;
+    }
+    h1 {
+      color: var(--accent-brown);
+      margin-bottom:1rem;
+    }
+    table {
+      width:100%;
+      border-collapse:collapse;
+    }
+    table th, table td {
+      border:1px solid #ddd;
+      padding:0.8rem;
+      text-align:center;
+    }
+    table th {
+      background-color: var(--bg-light);
+      color: var(--main-green);
+    }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">한그담</div>
+    <div class="logo">뜰마루 - 판매자 모드</div>
     <ul>
       <li><a href="seller-main.html">내 농장</a></li>
-      <li><a href="seller-orders.html">주문관리</a></li>
-      <li><a href="seller-shipping.html">배송관리</a></li>
-      <li><a href="seller-status.html">판매현황</a></li>
-      <li><a href="seller-customers.html">고객관리</a></li>
+      <li><a href="seller-orders.html">주문 관리</a></li>
+      <li><a href="seller-shipping.html">배송 관리</a></li>
+      <li><a href="seller-status.html">판매 현황</a></li>
+      <li><a href="seller-customers.html">고객 관리</a></li>
       <li><a href="seller-settings.html">설정</a></li>
-      <li><a href="seller-documents.html">문서관리</a></li>
+      <li><a href="seller-documents.html">문서 관리</a></li>
     </ul>
   </nav>
+
   <div class="container">
     <h1>고객 관리</h1>
-    <div class="customer-list">
-      <div class="customer">
-        <h3>이소비자</h3>
-        <p>최근 구매: 강화도 감자</p>
-        <p>리뷰: "배송도 빠르고 신선했어요!"</p>
-      </div>
-      <div class="customer">
-        <h3>최유저</h3>
-        <p>최근 구매: 무농약 쌈채소</p>
-        <p>리뷰: "포장이 깔끔하고 맛있네요 :)"</p>
-      </div>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>구매자명</th>
+          <th>구매 상품</th>
+          <th>리뷰</th>
+          <th>평점</th>
+          <th>관리</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>홍길동</td>
+          <td>유기농 딸기</td>
+          <td>너무 맛있어요!</td>
+          <td>5점</td>
+          <td><button>리뷰 확인</button></td>
+        </tr>
+        <tr>
+          <td>김철수</td>
+          <td>강화도 상추</td>
+          <td>아삭하고 신선함</td>
+          <td>4점</td>
+          <td><button>리뷰 확인</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </body>
 </html>
