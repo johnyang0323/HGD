@@ -1,65 +1,102 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>설정 - 한그담 판매자</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>뜰마루 | 판매자 설정</title>
   <style>
-    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
-    nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { font-size: 1.5rem; font-weight: bold; color: white; }
-    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
-    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
-    .container { max-width: 800px; margin: 2rem auto; padding: 1rem; }
-    h1 { color: #EC692C; }
-    .setting {
-      background: #f9f9f9;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    :root {
+      --main-green: #4E944F;
+      --accent-brown: #795548;
+      --bg-light: #F2F8F2;
+      --text-color: #333;
     }
-    .setting-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.8rem 0;
-      border-bottom: 1px solid #ddd;
+    body {
+      margin:0;
+      font-family:'Pretendard',sans-serif;
+      background:#fff;
+      color:var(--text-color);
     }
-    .setting-item:last-child { border-bottom: none; }
-    label { font-weight: 500; }
+    nav {
+      background-color: var(--accent-brown);
+      padding:1rem 2rem;
+      display:flex;
+      gap:2rem;
+      align-items:center;
+      color:white;
+    }
+    nav .logo{
+      font-size:1.3rem;
+      font-weight:bold;
+    }
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:1rem;
+      margin:0;
+      padding:0;
+    }
+    nav ul li a {
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .container {
+      max-width:600px;
+      margin:2rem auto;
+      padding:1rem;
+    }
+    h1 {
+      color: var(--accent-brown);
+      margin-bottom:1rem;
+    }
+    .settings-block {
+      background-color: var(--bg-light);
+      padding:1rem;
+      border-radius:6px;
+      margin-bottom:1rem;
+    }
+    .settings-block h2 {
+      margin-top:0;
+      color: var(--main-green);
+    }
+    label {
+      display:flex;
+      align-items:center;
+      gap:0.5rem;
+      margin-bottom:0.5rem;
+    }
     input[type="checkbox"] {
-      transform: scale(1.2);
+      transform:scale(1.2);
     }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">한그담</div>
+    <div class="logo">뜰마루 - 판매자 모드</div>
     <ul>
       <li><a href="seller-main.html">내 농장</a></li>
-      <li><a href="seller-orders.html">주문관리</a></li>
-      <li><a href="seller-shipping.html">배송관리</a></li>
-      <li><a href="seller-status.html">판매현황</a></li>
-      <li><a href="seller-customers.html">고객관리</a></li>
+      <li><a href="seller-orders.html">주문 관리</a></li>
+      <li><a href="seller-shipping.html">배송 관리</a></li>
+      <li><a href="seller-status.html">판매 현황</a></li>
+      <li><a href="seller-customers.html">고객 관리</a></li>
       <li><a href="seller-settings.html">설정</a></li>
-      <li><a href="seller-documents.html">문서관리</a></li>
+      <li><a href="seller-documents.html">문서 관리</a></li>
     </ul>
   </nav>
 
   <div class="container">
     <h1>설정</h1>
-    <div class="setting">
-      <div class="setting-item">
-        <label for="noti">주문 알림 받기</label>
-        <input type="checkbox" id="noti" checked>
-      </div>
-      <div class="setting-item">
-        <label for="sms">문자 알림</label>
-        <input type="checkbox" id="sms">
-      </div>
-      <div class="setting-item">
-        <label for="email">이메일 알림</label>
-        <input type="checkbox" id="email" checked>
-      </div>
+    <div class="settings-block">
+      <h2>알림 설정</h2>
+      <label><input type="checkbox"> 신규 주문 알림</label>
+      <label><input type="checkbox"> 리뷰 등록 알림</label>
+      <label><input type="checkbox"> 재고 부족 알림</label>
+    </div>
+    <div class="settings-block">
+      <h2>계정 정보</h2>
+      <p>이메일: seller@example.com</p>
+      <p>비밀번호 변경</p>
     </div>
   </div>
 </body>
