@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배송관리 - 한그담 판매자</title>
+  <style>
+    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
+    nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    nav .logo { font-size: 1.5rem; font-weight: bold; color: white; }
+    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
+    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
+    .container { max-width: 900px; margin: 2rem auto; padding: 1rem; }
+    h1 { color: #EC692C; }
+    .shipping-card {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom: 1rem;
+    }
+    .shipping-card h3 { margin: 0; color: #EC692C; }
+    .shipping-card p { margin: 0.3rem 0; }
+    .status { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">한그담</div>
+    <ul>
+      <li><a href="seller-main.html">내 농장</a></li>
+      <li><a href="seller-orders.html">주문관리</a></li>
+      <li><a href="seller-shipping.html">배송관리</a></li>
+      <li><a href="seller-status.html">판매현황</a></li>
+      <li><a href="seller-customers.html">고객관리</a></li>
+      <li><a href="seller-settings.html">설정</a></li>
+      <li><a href="seller-documents.html">문서관리</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>배송 관리</h1>
+    <div class="shipping-card">
+      <h3>주문 #20250401001</h3>
+      <p>상품: 강화도 감자</p>
+      <p>고객: 이소비자</p>
+      <p class="status">현재 상태: 배송중</p>
+    </div>
+    <div class="shipping-card">
+      <h3>주문 #20250328002</h3>
+      <p>상품: 무농약 쌈채소</p>
+      <p>고객: 최유저</p>
+      <p class="status">현재 상태: 배송완료</p>
+    </div>
+  </div>
+</body>
+</html>
