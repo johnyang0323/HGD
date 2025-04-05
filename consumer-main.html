@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>소비자 모드 - 한그담</title>
+  <style>
+    body {
+      font-family: 'Pretendard', sans-serif;
+      margin: 0;
+      background-color: #fff;
+      color: #333;
+    }
+    nav {
+      background-color: #EC692C;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .dashboard {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h1 {
+      color: #EC692C;
+      margin-bottom: 1rem;
+    }
+    .section {
+      margin-bottom: 2.5rem;
+    }
+    .card-grid {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 8px;
+      flex: 1 1 250px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #EC692C;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">한그담</div>
+    <ul>
+      <li><a href="consumer-main.html">홈</a></li>
+      <li><a href="consumer-orders.html">주문내역</a></li>
+      <li><a href="consumer-shipping.html">배송지/배송조회</a></li>
+      <li><a href="consumer-payment.html">결제방법</a></li>
+      <li><a href="consumer-inquiry.html">문의사항</a></li>
+      <li><a href="consumer-settings.html">설정</a></li>
+      <li><a href="consumer-support.html">고객센터</a></li>
+      <li><a href="consumer-community.html">커뮤니티</a></li>
+      <li><a href="consumer-funding.html">펀딩</a></li>
+    </ul>
+  </nav>
+
+  <div class="dashboard">
+    <h1>소비자 대시보드</h1>
+
+    <div class="section">
+      <h2>AI 기반 맞춤 추천</h2>
+      <div class="card-grid">
+        <div class="card"><h3>비타민 A 많은 농산물</h3><p>당근, 시금치 등</p></div>
+        <div class="card"><h3>면역력 강화 추천</h3><p>마늘, 브로콜리, 배</p></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>키워드 추천</h2>
+      <div class="card-grid">
+        <div class="card">콜레스테롤</div>
+        <div class="card">당뇨</div>
+        <div class="card">고혈압</div>
+        <div class="card">가공육</div>
+        <div class="card">유당불내증</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>추천 가게 및 농산품</h2>
+      <div class="card-grid">
+        <div class="card"><h3>조농부의 사과</h3><p>달콤하고 아삭한 100% 국내산</p></div>
+        <div class="card"><h3>문성선 농부의 유정란</h3><p>자연방사 유정란, 건강한 선택</p></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>많이 검색한 키워드</h2>
+      <div class="card-grid">
+        <div class="card">제철 과일</div>
+        <div class="card">강화도 농장</div>
+        <div class="card">저탄수 채소</div>
+        <div class="card">무농약</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
