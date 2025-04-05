@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한그담 - 로그인</title>
+  <style>
+    body {
+      font-family: 'Pretendard', sans-serif;
+      margin: 0;
+      background-color: #fff7f0;
+      color: #333;
+    }
+    nav {
+      background-color: #EC692C;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .login-container {
+      max-width: 400px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #EC692C;
+    }
+    .form-field {
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .login-button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #EC692C;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .toggle-role {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .toggle-role button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #EC692C;
+      background: white;
+      color: #EC692C;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">한그담</div>
+    <ul>
+      <li><a href="index.html">홈</a></li>
+      <li><a href="market.html">마켓</a></li>
+      <li><a href="join.html">입점신청</a></li>
+      <li><a href="community.html">커뮤니티</a></li>
+      <li><a href="about.html">소개</a></li>
+    </ul>
+  </nav>
+
+  <div class="login-container">
+    <h1>로그인</h1>
+    <div class="form-field">
+      <label for="email">이메일</label>
+      <input type="email" id="email" placeholder="your@email.com">
+    </div>
+    <div class="form-field">
+      <label for="password">비밀번호</label>
+      <input type="password" id="password" placeholder="비밀번호 입력">
+    </div>
+    <button class="login-button">로그인</button>
+
+    <div class="toggle-role">
+      <button>소비자 모드</button>
+      <button>입점 농부 모드</button>
+    </div>
+  </div>
+</body>
+</html>
