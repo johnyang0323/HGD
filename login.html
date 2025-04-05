@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>한그담 - 로그인</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>뜰마루 | 로그인</title>
   <style>
+    :root {
+      --main-green: #4E944F;
+      --accent-brown: #795548;
+      --bg-light: #F2F8F2;
+      --text-color: #333;
+    }
     body {
-      font-family: 'Pretendard', sans-serif;
       margin: 0;
-      background-color: #fff7f0;
-      color: #333;
+      font-family: 'Pretendard', sans-serif;
+      background-color: #fff;
+      color: var(--text-color);
     }
     nav {
-      background-color: #EC692C;
+      background-color: var(--main-green);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -35,61 +41,60 @@
       text-decoration: none;
       font-weight: 500;
     }
-    .login-container {
+    .container {
       max-width: 400px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 2rem auto;
+      padding: 1rem;
     }
     h1 {
+      color: var(--main-green);
+      margin-bottom: 1rem;
       text-align: center;
-      color: #EC692C;
     }
     .form-field {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
-    label {
+    .form-field label {
       display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
     }
-    input {
+    .form-field input {
       width: 100%;
-      padding: 0.8rem;
+      padding: 0.6rem;
       border: 1px solid #ccc;
-      border-radius: 8px;
+      border-radius: 6px;
+      font-size: 1rem;
     }
-    .login-button {
-      width: 100%;
-      padding: 0.8rem;
-      background-color: #EC692C;
+    .mode-switch {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .mode-switch button {
+      margin: 0 0.5rem;
+      padding: 0.6rem 1rem;
+      background-color: var(--accent-brown);
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .toggle-role {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: space-between;
-    }
-    .toggle-role button {
-      padding: 0.5rem 1rem;
-      border: 1px solid #EC692C;
-      background: white;
-      color: #EC692C;
       border-radius: 6px;
       cursor: pointer;
-      font-weight: 500;
+    }
+    .login-btn {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: var(--main-green);
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">한그담</div>
+    <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">뜰마루</a></div>
     <ul>
       <li><a href="index.html">홈</a></li>
       <li><a href="market.html">마켓</a></li>
@@ -99,21 +104,22 @@
     </ul>
   </nav>
 
-  <div class="login-container">
+  <div class="container">
     <h1>로그인</h1>
     <div class="form-field">
-      <label for="email">이메일</label>
-      <input type="email" id="email" placeholder="your@email.com">
+      <label>이메일</label>
+      <input type="email" placeholder="example@email.com">
     </div>
     <div class="form-field">
-      <label for="password">비밀번호</label>
-      <input type="password" id="password" placeholder="비밀번호 입력">
+      <label>비밀번호</label>
+      <input type="password" placeholder="••••••">
     </div>
-    <button class="login-button">로그인</button>
+    <button class="login-btn">로그인</button>
 
-    <div class="toggle-role">
-      <button>소비자 모드</button>
-      <button>입점 농부 모드</button>
+    <div class="mode-switch">
+      <p>소비자 모드 / 판매자 모드 전환</p>
+      <button onclick="alert('소비자 모드로 전환되었습니다! (가상)')">소비자 모드</button>
+      <button onclick="alert('판매자 모드로 전환되었습니다! (가상)')">판매자 모드</button>
     </div>
   </div>
 </body>
