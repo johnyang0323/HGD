@@ -1,62 +1,92 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>결제방법 - 한그담 소비자</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>뜰마루 | 결제방법</title>
   <style>
-    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
-    nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { font-size: 1.5rem; font-weight: bold; color: white; }
-    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
-    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
-    .container { max-width: 700px; margin: 2rem auto; padding: 1rem; }
-    h1 { color: #EC692C; }
-    .card-list {
-      background: #f9f9f9;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    :root {
+      --main-green: #4E944F;
+      --accent-brown: #795548;
+      --bg-light: #F2F8F2;
+      --text-color: #333;
     }
-    .card-item {
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+    }
+    nav {
+      background-color: var(--main-green);
+      padding: 1rem 2rem;
       display: flex;
-      justify-content: space-between;
-      padding: 0.8rem 0;
+      gap: 2rem;
+      align-items: center;
+      color: white;
+    }
+    nav .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h1 {
+      color: var(--main-green);
+      margin-bottom: 1rem;
+    }
+    .payment-list {
+      background-color: var(--bg-light);
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    .payment-item {
+      padding: 0.5rem 0;
       border-bottom: 1px solid #ddd;
     }
-    .card-item:last-child {
-      border-bottom: none;
-    }
-    .card-label { font-weight: 500; }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">한그담</div>
+    <div class="logo">뜰마루 - 소비자 모드</div>
     <ul>
       <li><a href="consumer-main.html">홈</a></li>
       <li><a href="consumer-orders.html">주문내역</a></li>
       <li><a href="consumer-shipping.html">배송조회</a></li>
       <li><a href="consumer-payment.html">결제방법</a></li>
+      <li><a href="consumer-inquiry.html">문의사항</a></li>
+      <li><a href="consumer-settings.html">설정</a></li>
+      <li><a href="consumer-support.html">고객센터</a></li>
+      <li><a href="consumer-community.html">커뮤니티</a></li>
+      <li><a href="consumer-funding.html">펀딩</a></li>
     </ul>
   </nav>
 
   <div class="container">
-    <h1>결제방법</h1>
-    <div class="card-list">
-      <div class="card-item">
-        <span class="card-label">신용카드</span>
-        <span>하나카드 (****-1234)</span>
-      </div>
-      <div class="card-item">
-        <span class="card-label">간편결제</span>
-        <span>카카오페이 연결됨</span>
-      </div>
-      <div class="card-item">
-        <span class="card-label">무통장입금</span>
-        <span>국민은행 123-45-67890</span>
-      </div>
+    <h1>결제방법 관리</h1>
+    <div class="payment-list">
+      <h2>등록된 결제수단</h2>
+      <div class="payment-item">신용카드 (XXXX-XXXX-1234)</div>
+      <div class="payment-item">간편결제 (○○ Pay)</div>
+      <div class="payment-item">무통장입금</div>
     </div>
+    <button style="background-color: var(--accent-brown); color:white; padding:0.5rem 1rem; border:none; border-radius:6px; cursor:pointer;">
+      결제수단 추가
+    </button>
   </div>
 </body>
 </html>
