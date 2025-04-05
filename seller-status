@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>판매현황 - 한그담 판매자</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
     nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
@@ -12,7 +13,7 @@
     nav ul li a { color: white; text-decoration: none; font-weight: 500; }
     .container { max-width: 1000px; margin: 2rem auto; padding: 1rem; }
     h1 { color: #EC692C; }
-    .status-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .status-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
     .card {
       flex: 1 1 250px;
       background: #f9f9f9;
@@ -22,6 +23,7 @@
     }
     .card h3 { color: #EC692C; margin: 0; }
     .card p { font-size: 0.9rem; color: #555; }
+    .chart-container { background: #f9f9f9; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
   </style>
 </head>
 <body>
@@ -57,6 +59,34 @@
         <p>2.1%</p>
       </div>
     </div>
+
+    <div class="chart-container">
+      <h3 style="color:#EC692C">월별 매출 그래프</h3>
+      <canvas id="salesChart"></canvas>
+    </div>
   </div>
+  <script>
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['1월', '2월', '3월', '4월', '5월', '6월'],
+        datasets: [{
+          label: '월별 매출 (만원)',
+          data: [320, 410, 390, 438, 470, 495],
+          borderColor: '#EC692C',
+          backgroundColor: 'rgba(236, 105, 44, 0.2)',
+          tension: 0.3,
+          fill: true,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { position: 'top' } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
 </body>
 </html>
+
