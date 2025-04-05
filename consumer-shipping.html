@@ -1,59 +1,96 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>배송조회 - 한그담 소비자</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>뜰마루 | 배송조회</title>
   <style>
-    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
-    nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { font-size: 1.5rem; font-weight: bold; color: white; }
-    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
-    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
-    .container { max-width: 800px; margin: 2rem auto; padding: 1rem; }
-    h1 { color: #EC692C; }
-    .address-box, .track-box {
-      background: #f9f9f9;
-      border-radius: 8px;
-      padding: 1rem 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    :root {
+      --main-green: #4E944F;
+      --accent-brown: #795548;
+      --bg-light: #F2F8F2;
+      --text-color: #333;
     }
-    .track-box ul { list-style: none; padding: 0; margin: 0; }
-    .track-box li {
-      padding: 0.6rem 0;
-      border-bottom: 1px solid #eee;
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
     }
-    .track-box li:last-child { border-bottom: none; }
+    nav {
+      background-color: var(--main-green);
+      padding: 1rem 2rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      color: white;
+    }
+    nav .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h1 {
+      color: var(--main-green);
+      margin-bottom: 1rem;
+    }
+    .shipping-info, .tracking-list {
+      background-color: var(--bg-light);
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .shipping-info h2, .tracking-list h2 {
+      margin-top: 0;
+      color: var(--accent-brown);
+    }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">한그담</div>
+    <div class="logo">뜰마루 - 소비자 모드</div>
     <ul>
       <li><a href="consumer-main.html">홈</a></li>
       <li><a href="consumer-orders.html">주문내역</a></li>
       <li><a href="consumer-shipping.html">배송조회</a></li>
+      <li><a href="consumer-payment.html">결제방법</a></li>
+      <li><a href="consumer-inquiry.html">문의사항</a></li>
       <li><a href="consumer-settings.html">설정</a></li>
+      <li><a href="consumer-support.html">고객센터</a></li>
+      <li><a href="consumer-community.html">커뮤니티</a></li>
+      <li><a href="consumer-funding.html">펀딩</a></li>
     </ul>
   </nav>
 
   <div class="container">
-    <h1>배송조회</h1>
+    <h1>배송지 & 배송조회</h1>
 
-    <div class="address-box">
-      <h3>기본 배송지</h3>
-      <p>서울특별시 마포구 월드컵북로 42길 17, 302호</p>
+    <div class="shipping-info">
+      <h2>내 배송지 정보</h2>
+      <p>이름: 홍길동</p>
       <p>연락처: 010-1234-5678</p>
+      <p>주소: 인천광역시 강화군 ○○로 ○○</p>
     </div>
 
-    <div class="track-box">
-      <h3>배송 현황 - 주문번호 #20250401001</h3>
-      <ul>
-        <li>📦 상품 준비 중 - 04/01 10:32</li>
-        <li>🚚 배송 시작 - 04/01 15:08</li>
-        <li>📍 서울 물류센터 도착 - 04/01 21:00</li>
-      </ul>
+    <div class="tracking-list">
+      <h2>배송 현황</h2>
+      <p>주문번호: 20230401-001</p>
+      <p>상품명: 유기농 딸기</p>
+      <p>배송 상태: 배송중</p>
     </div>
   </div>
 </body>
