@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>한그담 | 한 그릇에 담다</title>
+  <title>뜰마루 | 메인</title>
   <style>
+    :root {
+      --main-green: #4E944F;
+      --accent-brown: #795548;
+      --bg-light: #F2F8F2;
+      --text-color: #333;
+    }
     body {
       margin: 0;
       font-family: 'Pretendard', sans-serif;
       background-color: #fff;
-      color: #333;
+      color: var(--text-color);
     }
     nav {
-      background-color: #EC692C;
+      background-color: var(--main-green);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -42,57 +48,75 @@
       font-weight: 500;
     }
     .hero {
-      padding: 6rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
-      background: linear-gradient(to bottom right, #EC692C, #ff9f60);
-      color: white;
+      background-color: var(--bg-light);
     }
     .hero h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: var(--main-green);
     }
     .hero p {
-      font-size: 1.25rem;
-      max-width: 600px;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--text-color);
+    }
+    .hero .cta {
+      padding: 0.8rem 1.6rem;
+      background-color: var(--main-green);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .mode-switch {
+      margin: 1rem 0;
+    }
+    .mode-switch button {
+      margin: 0 0.5rem;
+      padding: 0.6rem 1rem;
+      background-color: var(--accent-brown);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
       margin: 0 auto;
     }
-    .features {
-      padding: 4rem 2rem;
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--main-green);
+    }
+    .card-list {
       display: flex;
-      justify-content: center;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      gap: 2rem;
-      background: #fef9f6;
     }
-    .feature-card {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      width: 300px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-    .feature-card h3 {
-      color: #EC692C;
-      margin-bottom: 0.5rem;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      color: #EC692C;
-      margin-top: 4rem;
+    .card {
+      flex: 1 1 200px;
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
     .footer {
       text-align: center;
       padding: 2rem;
-      background-color: #f1f1f1;
+      background-color: #eee;
       font-size: 0.9rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">한그담</a></div>
+    <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">뜰마루</a></div>
     <ul>
       <li><a href="index.html">홈</a></li>
       <li><a href="market.html">마켓</a></li>
@@ -107,29 +131,37 @@
   </nav>
 
   <section class="hero">
-    <h1>한 그릇에 담긴 이야기, 한그담</h1>
-    <p>건강한 농산물과 따뜻한 이야기를 담은 플랫폼, 청년 농부의 도전과 정성을 함께 느껴보세요.</p>
+    <h1>청년 농부와 작은 농가를 잇는, 뜰마루</h1>
+    <p>건강하고 신뢰할 수 있는 농산물, 이제는 한 곳에서.</p>
+
+    <!-- 모드 전환 버튼 -->
+    <div class="mode-switch">
+      <button onclick="window.location.href='consumer-main.html'">소비자 모드</button>
+      <button onclick="window.location.href='seller-main.html'">판매자 모드</button>
+    </div>
+
+    <a href="market.html"><button class="cta">농산물 보러가기</button></a>
   </section>
 
-  <h2 class="section-title">우리의 특징</h2>
-  <section class="features">
-    <div class="feature-card">
-      <h3>건강 맞춤 AI 추천</h3>
-      <p>당뇨, 고혈압, 유당불내증 등 개인 건강에 맞춘 농산물 추천</p>
+  <section class="section">
+    <h2>오늘의 추천 농산물</h2>
+    <div class="card-list">
+      <div class="card">🍓 유기농 딸기</div>
+      <div class="card">🥬 강화도 상추</div>
+      <div class="card">🍎 청년 농부의 사과</div>
     </div>
-    <div class="feature-card">
-      <h3>직거래 스토리 마켓</h3>
-      <p>청년 농부의 이야기와 함께 하는 신선한 직거래 마켓</p>
-    </div>
-    <div class="feature-card">
-      <h3>펀딩 & 커뮤니티</h3>
-      <p>함께 성장하는 농촌 펀딩 프로젝트와 고객 소통 공간</p>
+  </section>
+
+  <section class="section">
+    <h2>브랜드 스토리</h2>
+    <div class="card-list">
+      <div class="card">문성선 농부의 이야기</div>
+      <div class="card">조농부 마켓의 도전</div>
     </div>
   </section>
 
   <footer class="footer">
-    © 2025 한그담 | 이용약관 | 개인정보처리방침
+    © 2025 뜰마루 | 이용약관 | 개인정보처리방침
   </footer>
 </body>
 </html>
-
