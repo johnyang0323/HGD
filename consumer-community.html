@@ -65,6 +65,32 @@
       margin-top:0.5rem;
       color:#555;
     }
+    /* 글쓰기 폼 */
+    .write-form {
+      margin: 2rem 0;
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    .write-form h3 {
+      margin-top:0;
+      color: var(--accent-brown);
+    }
+    .write-form input, .write-form textarea {
+      width: 100%;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+    .write-form button {
+      background-color: var(--main-green);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -84,18 +110,26 @@
   </nav>
 
   <section class="section">
+
+    <!-- 새 글 작성 폼 -->
+    <div class="write-form">
+      <h3>새 글 작성</h3>
+      <input type="text" id="post-title" placeholder="제목" />
+      <textarea id="post-content" rows="3" placeholder="내용"></textarea>
+      <button onclick="addPost()">글 등록</button>
+    </div>
+
     <div class="board">
       <h2>리뷰 게시판</h2>
-      <div class="post">
-        <div class="post-title">강화도 상추가 정말 싱싱해요!</div>
-        <div class="post-content">
-          포장도 깔끔했고 신선해서 너무 좋았습니다.
+      <div id="reviewList">
+        <!-- 기존 예시 글 -->
+        <div class="post">
+          <div class="post-title">강화도 상추가 정말 싱싱해요!</div>
+          <div class="post-content">포장도 깔끔했고 신선해서 너무 좋았습니다.</div>
         </div>
-      </div>
-      <div class="post">
-        <div class="post-title">청년 농부 사과 최고!</div>
-        <div class="post-content">
-          당도도 높고 아삭아삭하니 만족스러웠습니다.
+        <div class="post">
+          <div class="post-title">청년 농부 사과 최고!</div>
+          <div class="post-content">당도도 높고 아삭아삭하니 만족스러웠습니다.</div>
         </div>
       </div>
     </div>
@@ -116,5 +150,27 @@
       </div>
     </div>
   </section>
+
+  <script>
+    function addPost(){
+      const title = document.getElementById('post-title').value.trim();
+      const content = document.getElementById('post-content').value.trim();
+      if(!title || !content){
+        alert('제목과 내용을 입력해주세요.');
+        return;
+      }
+      const newPost = document.createElement('div');
+      newPost.className = 'post';
+      newPost.innerHTML = `
+        <div class="post-title">${title}</div>
+        <div class="post-content">${content}</div>
+      `;
+      document.getElementById('reviewList').appendChild(newPost);
+
+      document.getElementById('post-title').value = '';
+      document.getElementById('post-content').value = '';
+      alert('글이 등록되었습니다 (MVP 시연용)');
+    }
+  </script>
 </body>
 </html>
