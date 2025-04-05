@@ -35,7 +35,7 @@
       <li><a href="seller-shipping.html">배송관리</a></li>
       <li><a href="seller-status.html">판매현황</a></li>
       <li><a href="seller-customers.html">고객관리</a></li>
-      <li><a href="seller-settings.html">설정</a></li>
+      <li><a href="seller-setting.html">설정</a></li>
       <li><a href="seller-documents.html">문서관리</a></li>
     </ul>
   </nav>
