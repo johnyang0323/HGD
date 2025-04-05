@@ -1,33 +1,79 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>판매자 주문관리 - 한그담</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>뜰마루 | 주문 관리</title>
   <style>
-    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
-    nav { background: #EC692C; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { font-size: 1.5rem; font-weight: bold; color: white; }
-    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
-    nav ul li a { color: white; text-decoration: none; font-weight: 500; }
-    .container { max-width: 1000px; margin: 2rem auto; padding: 1rem; }
-    h1 { color: #EC692C; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    th, td { padding: 0.75rem; border-bottom: 1px solid #ddd; text-align: left; }
-    th { background: #FFF4EE; color: #EC692C; }
+    :root {
+      --main-green: #4E944F;
+      --accent-brown: #795548;
+      --bg-light: #F2F8F2;
+      --text-color: #333;
+    }
+    body {
+      margin:0;
+      font-family:'Pretendard',sans-serif;
+    }
+    nav {
+      background-color: var(--accent-brown);
+      padding:1rem 2rem;
+      display:flex;
+      gap:2rem;
+      align-items:center;
+      color:white;
+    }
+    nav .logo {
+      font-size:1.3rem;
+      font-weight:bold;
+    }
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:1rem;
+      margin:0;
+      padding:0;
+    }
+    nav ul li a {
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+    }
+    .container {
+      max-width:900px;
+      margin:2rem auto;
+      padding:1rem;
+    }
+    h1 {
+      color: var(--accent-brown);
+      margin-bottom:1rem;
+    }
+    table {
+      width:100%;
+      border-collapse:collapse;
+    }
+    table th, table td {
+      border:1px solid #ddd;
+      padding:0.8rem;
+      text-align:center;
+    }
+    table th {
+      background-color: var(--bg-light);
+      color: var(--main-green);
+    }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">한그담</div>
+    <div class="logo">뜰마루 - 판매자 모드</div>
     <ul>
       <li><a href="seller-main.html">내 농장</a></li>
-      <li><a href="seller-orders.html">주문관리</a></li>
-      <li><a href="seller-shipping.html">배송관리</a></li>
-      <li><a href="seller-status.html">판매현황</a></li>
-      <li><a href="seller-customers.html">고객관리</a></li>
+      <li><a href="seller-orders.html">주문 관리</a></li>
+      <li><a href="seller-shipping.html">배송 관리</a></li>
+      <li><a href="seller-status.html">판매 현황</a></li>
+      <li><a href="seller-customers.html">고객 관리</a></li>
       <li><a href="seller-settings.html">설정</a></li>
-      <li><a href="seller-documents.html">문서관리</a></li>
+      <li><a href="seller-documents.html">문서 관리</a></li>
     </ul>
   </nav>
 
@@ -37,26 +83,29 @@
       <thead>
         <tr>
           <th>주문번호</th>
-          <th>고객명</th>
-          <th>상품</th>
+          <th>상품명</th>
           <th>수량</th>
+          <th>주문일</th>
           <th>상태</th>
+          <th>관리</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>#20250401001</td>
-          <td>이소비자</td>
-          <td>강화도 감자</td>
+          <td>20230401-001</td>
+          <td>유기농 딸기</td>
           <td>2</td>
+          <td>2025-04-01</td>
           <td>배송중</td>
+          <td><button>상태변경</button></td>
         </tr>
         <tr>
-          <td>#20250328002</td>
-          <td>최유저</td>
-          <td>무농약 쌈채소</td>
-          <td>1</td>
-          <td>배송완료</td>
+          <td>20230402-002</td>
+          <td>강화도 상추</td>
+          <td>3</td>
+          <td>2025-04-02</td>
+          <td>결제완료</td>
+          <td><button>상태변경</button></td>
         </tr>
       </tbody>
     </table>
