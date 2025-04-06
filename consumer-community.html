@@ -1,89 +1,74 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>뜰마루 | 커뮤니티</title>
+  <title>뜰마루 | 커뮤니티 (LocalStorage)</title>
   <style>
     :root {
-      --main-green: #4E944F; 
-      --accent-brown: #795548;
-      --bg-light: #F2F8F2;
+      --main-green: #4E944F;   /* 주된 녹색 */
+      --accent-brown: #795548; /* 브라운 악센트 */
+      --bg-light: #F2F8F2;     /* 연한 배경 */
       --text-color: #333;
     }
     body {
-      margin:0;
-      font-family:'Pretendard',sans-serif;
-      background:#fff;
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background-color: #fff;
       color: var(--text-color);
     }
+    /* 상단 네비게이션 */
     nav {
-      /* 원하는 모드별 색을 사용하거나, 통일된 색을 써도 됨 */
       background-color: var(--main-green);
-      padding:1rem 2rem;
-      display:flex;
-      gap:2rem;
-      align-items:center;
-      color:white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
     }
     nav .logo {
-      font-size:1.3rem;
-      font-weight:bold;
+      font-size: 1.3rem;
+      font-weight: bold;
     }
     nav ul {
-      list-style:none;
-      display:flex;
-      gap:1rem;
-      margin:0;
-      padding:0;
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
     }
     nav ul li a {
-      color:white;
-      text-decoration:none;
-      font-weight:500;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
     }
-    .section {
-      padding:2rem;
-      max-width:800px;
-      margin:auto;
+    /* 메인 섹션 */
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
     }
-    .board {
-      margin-bottom:2rem;
-    }
-    .board h2 {
-      border-bottom:2px solid var(--accent-brown);
-      padding-bottom:0.5rem;
-      color: var(--accent-brown);
-    }
-    .post {
-      padding:1rem;
-      border-bottom:1px solid #ddd;
-    }
-    .post-title {
-      font-weight:bold;
+    h1 {
       color: var(--main-green);
+      margin-bottom: 1.5rem;
     }
-    .post-content {
-      margin-top:0.5rem;
-      color:#555;
-    }
-    /* 글쓰기 폼 */
     .write-form {
-      margin: 2rem 0;
-      background-color: #fafafa;
+      background: #fafafa;
       border: 1px solid #ddd;
       padding: 1rem;
       border-radius: 6px;
+      margin-bottom: 2rem;
     }
-    .write-form h3 {
-      margin-top:0;
+    .write-form h2 {
+      margin-top: 0;
       color: var(--accent-brown);
     }
     .write-form input, .write-form textarea {
       width: 100%;
       margin-bottom: 0.5rem;
-      padding: 0.5rem;
+      padding: 0.6rem;
       box-sizing: border-box;
+      font-size: 1rem;
     }
     .write-form button {
       background-color: var(--main-green);
@@ -93,16 +78,36 @@
       padding: 0.6rem 1.2rem;
       cursor: pointer;
     }
+    .board-section {
+      margin-top: 2rem;
+    }
+    .board-section h2 {
+      border-bottom: 2px solid var(--accent-brown);
+      padding-bottom: 0.3rem;
+      color: var(--accent-brown);
+    }
+    .post {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 1rem;
+    }
+    .post h4 {
+      margin: 0 0 0.3rem 0;
+      color: var(--main-green);
+    }
+    .post p {
+      margin: 0;
+      color: #555;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
-  <!-- 예시: seller 모드/consumer 모드 가리지 않고 공통으로 써도 됨 -->
-  <!-- 필요시, seller/nav 나 consumer/nav처럼 조건부 변경 가능 -->
   <nav>
-    <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">뜰마루</a></div>
+    <div class="logo">뜰마루</div>
     <ul>
-      <!-- 예시 링크들 -->
-      <li><a href="index.html">메인</a></li>
+      <!-- 원하는 링크로 교체 -->
+      <li><a href="index.html">홈</a></li>
       <li><a href="market.html">마켓</a></li>
       <li><a href="join.html">입점신청</a></li>
       <li><a href="community.html">커뮤니티</a></li>
@@ -110,64 +115,75 @@
     </ul>
   </nav>
 
-  <section class="section">
+  <div class="container">
+    <h1>커뮤니티 (LocalStorage 버전)</h1>
 
-    <!-- 새 글 작성 폼 -->
+    <!-- 글 작성 폼 -->
     <div class="write-form">
-      <h3>새 글 작성</h3>
-      <input type="text" id="post-title" placeholder="제목" />
-      <textarea id="post-content" rows="3" placeholder="내용"></textarea>
+      <h2>새 글 작성</h2>
+      <input type="text" id="titleInput" placeholder="제목" />
+      <textarea id="contentInput" rows="3" placeholder="내용"></textarea>
       <button onclick="addPost()">글 등록</button>
     </div>
 
-    <!-- 리뷰 게시판 -->
-    <div class="board">
-      <h2>리뷰 게시판</h2>
-      <div id="reviewList">
-        <div class="post">
-          <div class="post-title">강화도 상추가 정말 싱싱해요!</div>
-          <div class="post-content">포장도 깔끔했고 신선해서 너무 좋았습니다.</div>
-        </div>
-        <div class="post">
-          <div class="post-title">청년 농부 사과 최고!</div>
-          <div class="post-content">당도도 높고 아삭아삭하니 만족스러웠습니다.</div>
-        </div>
-      </div>
+    <!-- 게시판 섹션 -->
+    <div class="board-section">
+      <h2>게시글 목록</h2>
+      <div id="postList"><!-- 로드 시 여기서 그려짐 --></div>
     </div>
-
-    <!-- 질문 게시판 -->
-    <div class="board">
-      <h2>질문 게시판</h2>
-      <div class="post">
-        <div class="post-title">고혈압이 있는데 추천 상품 있나요?</div>
-        <div class="post-content">혹시 저염 식단에 좋은 식재료 추천 부탁드립니다.</div>
-      </div>
-      <div class="post">
-        <div class="post-title">가공육도 판매하나요?</div>
-        <div class="post-content">소시지나 베이컨 같은 품목도 궁금합니다.</div>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <script>
+    // 1) 페이지 로드 시 LocalStorage에서 불러오기
+    window.onload = function(){
+      const saved = localStorage.getItem('communityPosts');
+      if(saved){
+        const arr = JSON.parse(saved);
+        arr.forEach(post => {
+          renderPost(post.title, post.content);
+        });
+      }
+    };
+
+    // 2) 글 등록 함수
     function addPost(){
-      const title = document.getElementById('post-title').value.trim();
-      const content = document.getElementById('post-content').value.trim();
+      const title = document.getElementById('titleInput').value.trim();
+      const content = document.getElementById('contentInput').value.trim();
       if(!title || !content){
-        alert('제목과 내용을 입력해주세요.');
+        alert('제목과 내용을 입력하세요!');
         return;
       }
-      const newPost = document.createElement('div');
-      newPost.className = 'post';
-      newPost.innerHTML = `
-        <div class="post-title">${title}</div>
-        <div class="post-content">${content}</div>
-      `;
-      document.getElementById('reviewList').appendChild(newPost);
+      // 화면에 표시
+      renderPost(title, content);
+      // LocalStorage에 저장
+      saveToLocalStorage(title, content);
+      // 입력창 초기화
+      document.getElementById('titleInput').value = '';
+      document.getElementById('contentInput').value = '';
+      alert('글이 등록되었습니다 (LocalStorage)');
+    }
 
-      document.getElementById('post-title').value = '';
-      document.getElementById('post-content').value = '';
-      alert('글이 등록되었습니다 (MVP 시연)');
+    // 실제 DOM에 게시글 추가
+    function renderPost(title, content){
+      const postList = document.getElementById('postList');
+      const postDiv = document.createElement('div');
+      postDiv.className = 'post';
+      postDiv.innerHTML = `
+        <h4>${title}</h4>
+        <p>${content}</p>
+      `;
+      postList.appendChild(postDiv);
+    }
+
+    // LocalStorage에 저장
+    function saveToLocalStorage(title, content){
+      let postArr = [];
+      const saved = localStorage.getItem('communityPosts');
+      if(saved){
+        postArr = JSON.parse(saved);
+      }
+      postArr.push({ title, content });
+      localStorage.setItem('communityPosts', JSON.stringify(postArr));
     }
   </script>
 </body>
